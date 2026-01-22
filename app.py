@@ -18,8 +18,8 @@ def add_new_shifts():
         customer_id = data["customer_id"]
         new_shifts(start_time, end_time, lunch_break , consultant_id, customer_id)
         return {"success": "Shift added"}
-    except:
-        return {"error": "error in adding shift"}
+    except Exception as e:
+        return {e}
 
 # http://127.0.0.1:5000/new_shift
 
