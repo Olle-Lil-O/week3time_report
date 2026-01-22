@@ -19,7 +19,8 @@ def add_new_shifts():
         new_shifts(start_time, end_time, lunch_break , consultant_id, customer_id)
         return {"success": "Shift added"}
     except Exception as e:
-        return {e}
+        app.logger.exception("add_new_shifts failed")
+        return {"error": str(e)}, 400
 
 # http://127.0.0.1:5000/new_shift
 
